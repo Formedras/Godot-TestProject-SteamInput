@@ -1,2 +1,16 @@
 # Godot-TestProject-SteamInput
 A basic project for Godot, using GodotSteam, to test out Steam Input functionality.
+
+How to use:
+1. Make sure that both [Steam](https://steampowered.com) and [Godot Engine](https://godotengine.org) are installed on the computer you are trying this out on. This is not an exported project, so you need the Godot editor; this is also a Steam Input test using Steamworks, so Steam has to be installed too. Also ensure that you have at least one controller ready to use that Steam can utilize, preferably four controllers. These controllers can (and perhaps should?) be different types, including (but not limited to) the Valve Steam Controller, DualShock 4, Xbox Wireless Controller, or Nintendo Switch Pro Controller. 
+2. Clone, or download and extract, the Git repository. Both cloning and downloading options are available on the green "<> Code" button at the top of the file list.
+3. Copy SteamIGA.vdf over to the `controller_config` directory in your Steam install folder. (The correct location of the `controller_config` directory may be different on macOS or Linux.) For the default Steam installation directory, that would be `"C:\Program Files (x86)\Steam\controller_config"`. Rename it to `game_actions_480.vdf`.
+4. Open the project using Godot Engine and Run it using the Play button in the top-right part of the window or pressing F5.
+5. The app will start, but no buttons will show up yet, because no controls are configured. Connect one of your controllers if you haven't already, and open up the Steam interface. (Either the controller's Home button or with the assigned keyboard shortcut, `Shift+Tab` for default.)
+6. Open the Controller Settings in the Steam interface (an icon on the left or bottom of the screen in Desktop mode, or in the game's menu in Big Picture mode), and assign controls in all Action Sets.
+
+Notes:
+1. For Step 3, I actually recommend creating a Symbolic Link instead; that allows you to edit the file in your dev environment alongside the rest of the repository, and have the changes automatically and immediately propagate to Steam. [Link Shell Extension](https://schinagl.priv.at/nt/hardlinkshellext/linkshellextension.html) is a pretty good way to do this, though it can also be done through the command line.
+2. Also for Step 3, if you have your own AppID that you can use, you can replace the number "480" with that, so long as you also change the `steamAppID` variable in `SteamworksGDLoader.gd`.
+3. If you wish to try a DualShock 3 or SixAxis controller on Windows, you'll have to install a compatible driver. Either Sony's official driver (discontinued, but can still be found elsewhere on the internet) or Nefarius Software's [DsHidMini](https://github.com/nefarius/DsHidMini) software with the controller type set to SXS.
+4. Steam has changed how the controller configurator works and is accessed in the past (moving from the Steam Machines/SteamOS 2.0 interface to the Steam Deck/SteamOS 3.0 interface), and (like all existing console manufacturers with a new console) it's likely that they'll eventually do so again. Steps 5 and 6 are accurate as of April 2024, but are subject to change along with the Steam interface.
