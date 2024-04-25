@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://bywneg8f67h87"]
+
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_qca18"]
+[ext_resource type="Texture2D" uid="uid://dnrdstucjhyd5" path="res://icon.svg" id="1_wmsvl"]
+[ext_resource type="Texture2D" uid="uid://u2aypu51x6mc" path="res://formedras.svg" id="2_xvfs4"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_qca18")
+DefaultGlyph = ExtResource("2_xvfs4")
+
+[node name="colColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.113725, 0.690196, 0.576471, 1)
+
+[node name="lblConfirm" type="Label" parent="."]
+offset_top = 192.0
+offset_right = 1920.0
+offset_bottom = 256.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 44
+text = "Times \"Confirm\" has been pressed:"
+horizontal_alignment = 1
+
+[node name="lblConfirmPressed" type="Label" parent="."]
+offset_top = 248.0
+offset_right = 1920.0
+offset_bottom = 312.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 44
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="lblGameFirst" type="Label" parent="."]
+offset_top = 896.0
+offset_right = 960.0
+offset_bottom = 960.0
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 44
+text = "Check GameFirst Set"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="lblGameSecond" type="Label" parent="."]
+offset_left = 960.0
+offset_top = 896.0
+offset_right = 1920.0
+offset_bottom = 960.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 44
+text = "Check GameSecond Set"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="imgGlyphConfirm" type="TextureRect" parent="."]
+offset_left = 896.0
+offset_top = 64.0
+offset_right = 1024.0
+offset_bottom = 192.0
+size_flags_horizontal = 4
+texture = ExtResource("1_wmsvl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="imgGlyphGameFirst" type="TextureRect" parent="."]
+offset_left = 416.0
+offset_top = 768.0
+offset_right = 544.0
+offset_bottom = 896.0
+size_flags_horizontal = 4
+texture = ExtResource("1_wmsvl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="imgGlyphGameSecond" type="TextureRect" parent="."]
+offset_left = 1376.0
+offset_top = 768.0
+offset_right = 1504.0
+offset_bottom = 896.0
+size_flags_horizontal = 4
+texture = ExtResource("1_wmsvl")
+expand_mode = 1
+stretch_mode = 5

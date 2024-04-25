@@ -1,0 +1,100 @@
+"In Game Actions"
+{
+    "actions"
+    {
+        "SetMenu"
+        {
+            "title"                             "#Set_Menu"
+            "Button"
+            {
+                "MenuConfirm"                   "#Action_Common_Confirm"
+                "DebugGameFirst"                "#Action_Menu_GameFirst"
+                "DebugGameSecond"               "#Action_Menu_GameSecond"
+                "MenuGlyphJSON"                 "#Action_Menu_GlyphJSON"
+            }
+        }
+        "SetGameFirst"
+        {
+            "title"                             "#Set_GameFirst"
+            "Button"
+            {
+                "CFFire"                        "#Action_GameFirst_Fire"
+                "CFTake"                        "#Action_GameFirst_Take"
+                "CFLoad"                        "#Action_GameFirst_Load"
+                "CFPause"                       "#Action_Common_Pause"
+            }
+            "StickPadGyro"
+            {
+                "CFAim"
+                {
+                    "title"                     "#Action_GameFirst_Aim"
+                    "input_mode"                "joystick_move"
+                }
+            }
+        }
+        "SetGameSecond"
+        {
+            "title"                             "#Set_GameSecond"
+            "Button"
+            {
+                "BDLeftFlipper"                 "#Action_GameSecond_LeftFlipper"
+                "BDRightFlipper"                "#Action_GameSecond_RightFlipper"
+                "BDPause"                       "#Action_Common_Pause"
+            }
+        }
+    }
+    "action_layers"
+    {
+        "LayerGameFirstMovable"
+        {
+            "title"                             "#Layer_GameFirst_Movable"
+            "parent_set_name"                   "SetGameFirst"
+            "StickPadGyro"
+            {
+                "CFMove"
+                {
+                    "title"                     "#Action_GameFirst_Move"
+                    "input_mode"                "absolute_mouse"
+                }
+            }
+        }
+        "LayerGameSecondDummy"
+        {
+			"title"		                        "#Layer_GameSecond_Dummy"
+	    	"parent_set_name"		            "SetGameSecond"
+            "Button"
+            {
+                "Fire"                          "#Action_GameSecond_DummyFire"
+            }
+        }
+    }
+    "localization"
+    {
+        "english"
+        {
+            "Set_Menu"                          "Menu"
+            "Set_GameFirst"                     "GameFirst (Shoot)"
+            "Set_GameSecond"                    "GameSecond (Flipper)"
+
+            "Layer_GameFirst_Movable"           "Movable Launcher"
+            "Layer_GameSecond_Dummy"            "Dummy Layer"
+
+            "Action_Common_Confirm"             "Confirm"
+            "Action_Common_Pause"               "Pause"
+
+            "Action_Menu_GlyphJSON"             "Print Glyph Bank to JSON"
+            "Action_Menu_GameFirst"             "Activate GameFirst Set"
+            "Action_Menu_GameSecond"            "Activate GameSecond Set"
+
+            "Action_GameFirst_Aim"              "Aim Launcher"
+            "Action_GameFirst_Move"             "Move Launcher"
+            "Action_GameFirst_Fire"             "Fire Pellet"
+            "Action_GameFirst_Take"             "Take Pellets From Gutter"
+            "Action_GameFirst_Load"             "Load Pellets Into Launcher"
+
+            "Action_GameSecond_LeftFlipper"     "Left Flipper"
+            "Action_GameSecond_RightFlipper"    "Right Flipper"
+            "Action_GameSecond_DummyFire"       "Release Marble"
+        }
+    }
+}

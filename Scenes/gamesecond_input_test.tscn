@@ -1,0 +1,276 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7gwcyr2mlckr"]
+
+[ext_resource type="Script" path="res://Scenes/gamesecond_input_test.gd" id="1_poout"]
+[ext_resource type="Texture2D" uid="uid://u2aypu51x6mc" path="res://formedras.svg" id="2_3oen5"]
+[ext_resource type="Texture2D" uid="uid://dnrdstucjhyd5" path="res://icon.svg" id="3_bdmb3"]
+
+[node name="GameSecondInputTest" type="Node2D"]
+position = Vector2(-3, 0)
+script = ExtResource("1_poout")
+FormGlyph = ExtResource("2_3oen5")
+DefaultGlyph = ExtResource("3_bdmb3")
+
+[node name="colColorRect" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.113725, 0.690196, 0.576471, 1)
+
+[node name="colPlayfield" type="ColorRect" parent="."]
+offset_left = 576.0
+offset_top = 128.0
+offset_right = 1792.0
+offset_bottom = 960.0
+color = Color(0.305882, 0.466667, 0.882353, 1)
+
+[node name="colFlipperLeftP1" type="ColorRect" parent="."]
+visible = false
+offset_left = 1008.0
+offset_top = 720.0
+offset_right = 1168.0
+offset_bottom = 880.0
+color = Color(0.933333, 0.188235, 0.152941, 1)
+
+[node name="colFlipperRightP1" type="ColorRect" parent="."]
+visible = false
+offset_left = 1200.0
+offset_top = 720.0
+offset_right = 1360.0
+offset_bottom = 880.0
+color = Color(0.933333, 0.188235, 0.152941, 1)
+
+[node name="colFlipperLeftP2" type="ColorRect" parent="."]
+visible = false
+offset_left = 1200.0
+offset_top = 208.0
+offset_right = 1360.0
+offset_bottom = 368.0
+color = Color(0.933333, 0.188235, 0.152941, 1)
+
+[node name="colFlipperRightP2" type="ColorRect" parent="."]
+visible = false
+offset_left = 1008.0
+offset_top = 208.0
+offset_right = 1168.0
+offset_bottom = 368.0
+color = Color(0.933333, 0.188235, 0.152941, 1)
+
+[node name="colFlipperLeftP3" type="ColorRect" parent="."]
+visible = false
+offset_left = 656.0
+offset_top = 368.0
+offset_right = 816.0
+offset_bottom = 528.0
+color = Color(0.933333, 0.188235, 0.152941, 1)
+
+[node name="colFlipperRightP3" type="ColorRect" parent="."]
+visible = false
+offset_left = 656.0
+offset_top = 560.0
+offset_right = 816.0
+offset_bottom = 720.0
+color = Color(0.933333, 0.188235, 0.152941, 1)
+
+[node name="colFlipperLeftP4" type="ColorRect" parent="."]
+visible = false
+offset_left = 1552.0
+offset_top = 560.0
+offset_right = 1712.0
+offset_bottom = 720.0
+color = Color(0.933333, 0.188235, 0.152941, 1)
+
+[node name="colFlipperRightP4" type="ColorRect" parent="."]
+visible = false
+offset_left = 1552.0
+offset_top = 368.0
+offset_right = 1712.0
+offset_bottom = 528.0
+color = Color(0.933333, 0.188235, 0.152941, 1)
+
+[node name="imgGlyphPause" type="TextureRect" parent="."]
+offset_left = 96.0
+offset_top = 488.0
+offset_right = 224.0
+offset_bottom = 616.0
+size_flags_horizontal = 4
+texture = ExtResource("3_bdmb3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="imgGlyphFlipperLeftP1" type="TextureRect" parent="."]
+offset_left = 1024.0
+offset_top = 736.0
+offset_right = 1152.0
+offset_bottom = 864.0
+size_flags_horizontal = 4
+texture = ExtResource("3_bdmb3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="imgGlyphFlipperRightP1" type="TextureRect" parent="."]
+offset_left = 1216.0
+offset_top = 736.0
+offset_right = 1344.0
+offset_bottom = 864.0
+size_flags_horizontal = 4
+texture = ExtResource("3_bdmb3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="imgGlyphFlipperLeftP2" type="TextureRect" parent="."]
+offset_left = 1216.0
+offset_top = 224.0
+offset_right = 1344.0
+offset_bottom = 352.0
+size_flags_horizontal = 4
+texture = ExtResource("3_bdmb3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="imgGlyphFlipperRightP2" type="TextureRect" parent="."]
+offset_left = 1024.0
+offset_top = 224.0
+offset_right = 1152.0
+offset_bottom = 352.0
+size_flags_horizontal = 4
+texture = ExtResource("3_bdmb3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="imgGlyphFlipperLeftP3" type="TextureRect" parent="."]
+offset_left = 672.0
+offset_top = 384.0
+offset_right = 800.0
+offset_bottom = 512.0
+size_flags_horizontal = 4
+texture = ExtResource("3_bdmb3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="imgGlyphFlipperRightP3" type="TextureRect" parent="."]
+offset_left = 672.0
+offset_top = 576.0
+offset_right = 800.0
+offset_bottom = 704.0
+size_flags_horizontal = 4
+texture = ExtResource("3_bdmb3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="imgGlyphFlipperLeftP4" type="TextureRect" parent="."]
+offset_left = 1568.0
+offset_top = 576.0
+offset_right = 1696.0
+offset_bottom = 704.0
+size_flags_horizontal = 4
+texture = ExtResource("3_bdmb3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="imgGlyphFlipperRightP4" type="TextureRect" parent="."]
+offset_left = 1568.0
+offset_top = 384.0
+offset_right = 1696.0
+offset_bottom = 512.0
+size_flags_horizontal = 4
+texture = ExtResource("3_bdmb3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="lblPause" type="Label" parent="."]
+offset_left = 224.0
+offset_top = 488.0
+offset_right = 544.0
+offset_bottom = 616.0
+theme_override_font_sizes/font_size = 44
+text = "Pause: Return to Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="lblPlayer1" type="Label" parent="."]
+offset_left = 1024.0
+offset_top = 640.0
+offset_right = 1344.0
+offset_bottom = 704.0
+theme_override_font_sizes/font_size = 44
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblPlayer2" type="Label" parent="."]
+offset_left = 1024.0
+offset_top = 384.0
+offset_right = 1344.0
+offset_bottom = 448.0
+theme_override_font_sizes/font_size = 44
+text = "Player 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblPlayer3" type="Label" parent="."]
+offset_left = 832.0
+offset_top = 512.0
+offset_right = 1152.0
+offset_bottom = 576.0
+rotation = 1.5708
+pivot_offset = Vector2(160, 32)
+theme_override_font_sizes/font_size = 44
+text = "Player 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblPlayer4" type="Label" parent="."]
+offset_left = 1216.0
+offset_top = 512.0
+offset_right = 1536.0
+offset_bottom = 576.0
+rotation = -1.5708
+pivot_offset = Vector2(160, 32)
+theme_override_font_sizes/font_size = 44
+text = "Player 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblFlippersP1" type="Label" parent="."]
+offset_left = 1024.0
+offset_top = 896.0
+offset_right = 1344.0
+offset_bottom = 960.0
+theme_override_font_sizes/font_size = 44
+text = "Flippers"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblFlippersP2" type="Label" parent="."]
+offset_left = 1024.0
+offset_top = 128.0
+offset_right = 1344.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 44
+text = "Flippers"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblFlippersP3" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 512.0
+offset_right = 768.0
+offset_bottom = 576.0
+rotation = 1.5708
+pivot_offset = Vector2(160, 32)
+theme_override_font_sizes/font_size = 44
+text = "Flippers"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblFlippersP4" type="Label" parent="."]
+offset_left = 1600.0
+offset_top = 512.0
+offset_right = 1920.0
+offset_bottom = 576.0
+rotation = -1.5708
+pivot_offset = Vector2(160, 32)
+theme_override_font_sizes/font_size = 44
+text = "Flippers"
+horizontal_alignment = 1
+vertical_alignment = 1
