@@ -1,8 +1,8 @@
 # Godot-TestProject-SteamInput
-A basic project for Godot, using GodotSteam, to test out Steam Input functionality.
+A basic project for Godot 4.2, using GodotSteam, to test out Steam Input functionality.
 
 How to use:
-1. Make sure that both [Steam](https://steampowered.com) and [Godot Engine](https://godotengine.org) are installed on the computer you are trying this out on. This is not an exported project, so you need the Godot editor; this is also a Steam Input test using Steamworks, so Steam has to be installed too. Also ensure that you have at least one controller ready to use that Steam can utilize, preferably four controllers. These controllers can (and perhaps should?) be different types, including (but not limited to) the Valve Steam Controller, DualShock 4, Xbox Wireless Controller, or Nintendo Switch Pro Controller. 
+1. Make sure that both [Steam](https://steampowered.com) and [Godot Engine 4.2 or later](https://godotengine.org) are installed on the computer you are trying this out on. This is not an exported project, so you need the Godot editor; this is also a Steam Input test using Steamworks, so Steam has to be installed too. Also ensure that you have at least one controller ready to use that Steam can utilize, preferably four controllers. These controllers can (and perhaps should?) be different types, including (but not limited to) the Valve Steam Controller, DualShock 4, Xbox Wireless Controller, or Nintendo Switch Pro Controller. 
 2. Clone, or download and extract, the Git repository. Both cloning and downloading options are available on the green "<> Code" button at the top of the file list.
 3. Copy SteamIGA.vdf over to the `controller_config` directory in your Steam install folder. (The correct location of the `controller_config` directory may be different on macOS or Linux.) For the default Steam installation directory, that would be `"C:\Program Files (x86)\Steam\controller_config"`. Rename it to `game_actions_480.vdf`.
 4. Open the project using Godot Engine and Run it using the Play button in the top-right part of the window or pressing F5.
