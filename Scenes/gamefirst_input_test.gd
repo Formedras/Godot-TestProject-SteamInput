@@ -15,7 +15,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if !SteamworksGdLoader.isSteamInputRunning:
+	if !SteamworksInputLoader.isSteamInputRunning:
 		return
 		
 	var StCont = Steam.getConnectedControllers()
@@ -39,24 +39,24 @@ func _process(_delta):
 		var Or_Load = Steam.getDigitalActionOrigins(P1Handle, SH_GameFirst, DH_Load)
 		var Or_Aim = Steam.getAnalogActionOrigins(P1Handle, SH_GameFirst, AH_Aim)
 		for i in Or_Fire + Or_Take + Or_Load + Or_Aim:
-			SteamworksGdLoader.LoadGlyphIntoBank(i)
+			SteamworksGlyphBank.LoadGlyphIntoBank(i)
 
 		# Display Glyphs
 		if (Or_Fire.size() > 0):
-			var cur_tex = Or_Fire[SteamworksGdLoader.ButtonCycleCounter(Or_Fire.size(), GlyphCycleTimer)]
-			$imgGlyphFireP1.texture = SteamworksGdLoader.GlyphBank[cur_tex]
+			var cur_tex = Or_Fire[SteamworksGlyphBank.ButtonCycleCounter(Or_Fire.size(), GlyphCycleTimer)]
+			$imgGlyphFireP1.texture = SteamworksGlyphBank.GlyphBank[cur_tex]
 		else: $imgGlyphFireP1.texture = DefaultGlyph
 		if (Or_Take.size() > 0):
-			var cur_tex = Or_Take[SteamworksGdLoader.ButtonCycleCounter(Or_Take.size(), GlyphCycleTimer)]
-			$imgGlyphTakeP1.texture = SteamworksGdLoader.GlyphBank[cur_tex]
+			var cur_tex = Or_Take[SteamworksGlyphBank.ButtonCycleCounter(Or_Take.size(), GlyphCycleTimer)]
+			$imgGlyphTakeP1.texture = SteamworksGlyphBank.GlyphBank[cur_tex]
 		else: $imgGlyphTakeP1.texture = DefaultGlyph
 		if (Or_Load.size() > 0):
-			var cur_tex = Or_Load[SteamworksGdLoader.ButtonCycleCounter(Or_Load.size(), GlyphCycleTimer)]
-			$imgGlyphLoadP1.texture = SteamworksGdLoader.GlyphBank[cur_tex]
+			var cur_tex = Or_Load[SteamworksGlyphBank.ButtonCycleCounter(Or_Load.size(), GlyphCycleTimer)]
+			$imgGlyphLoadP1.texture = SteamworksGlyphBank.GlyphBank[cur_tex]
 		else: $imgGlyphLoadP1.texture = DefaultGlyph
 		if (Or_Aim.size() > 0):
-			var cur_tex = Or_Aim[SteamworksGdLoader.ButtonCycleCounter(Or_Aim.size(), GlyphCycleTimer)]
-			$imgGlyphAimP1.texture = SteamworksGdLoader.GlyphBank[cur_tex]
+			var cur_tex = Or_Aim[SteamworksGlyphBank.ButtonCycleCounter(Or_Aim.size(), GlyphCycleTimer)]
+			$imgGlyphAimP1.texture = SteamworksGlyphBank.GlyphBank[cur_tex]
 		else: $imgGlyphAimP1.texture = DefaultGlyph
 
 		# Check inputs and act
@@ -97,24 +97,24 @@ func _process(_delta):
 		var Or_Load = Steam.getDigitalActionOrigins(P2Handle, SH_GameFirst, DH_Load)
 		var Or_Aim = Steam.getAnalogActionOrigins(P2Handle, SH_GameFirst, AH_Aim)
 		for i in Or_Fire + Or_Take + Or_Load + Or_Aim:
-			SteamworksGdLoader.LoadGlyphIntoBank(i)
+			SteamworksGlyphBank.LoadGlyphIntoBank(i)
 
 		# Display Glyphs
 		if (Or_Fire.size() > 0):
-			var cur_tex = Or_Fire[SteamworksGdLoader.ButtonCycleCounter(Or_Fire.size(), GlyphCycleTimer)]
-			$imgGlyphFireP2.texture = SteamworksGdLoader.GlyphBank[cur_tex]
+			var cur_tex = Or_Fire[SteamworksGlyphBank.ButtonCycleCounter(Or_Fire.size(), GlyphCycleTimer)]
+			$imgGlyphFireP2.texture = SteamworksGlyphBank.GlyphBank[cur_tex]
 		else: $imgGlyphFireP2.texture = DefaultGlyph
 		if (Or_Take.size() > 0):
-			var cur_tex = Or_Take[SteamworksGdLoader.ButtonCycleCounter(Or_Take.size(), GlyphCycleTimer)]
-			$imgGlyphTakeP2.texture = SteamworksGdLoader.GlyphBank[cur_tex]
+			var cur_tex = Or_Take[SteamworksGlyphBank.ButtonCycleCounter(Or_Take.size(), GlyphCycleTimer)]
+			$imgGlyphTakeP2.texture = SteamworksGlyphBank.GlyphBank[cur_tex]
 		else: $imgGlyphTakeP2.texture = DefaultGlyph
 		if (Or_Load.size() > 0):
-			var cur_tex = Or_Load[SteamworksGdLoader.ButtonCycleCounter(Or_Load.size(), GlyphCycleTimer)]
-			$imgGlyphLoadP2.texture = SteamworksGdLoader.GlyphBank[cur_tex]
+			var cur_tex = Or_Load[SteamworksGlyphBank.ButtonCycleCounter(Or_Load.size(), GlyphCycleTimer)]
+			$imgGlyphLoadP2.texture = SteamworksGlyphBank.GlyphBank[cur_tex]
 		else: $imgGlyphLoadP2.texture = DefaultGlyph
 		if (Or_Aim.size() > 0):
-			var cur_tex = Or_Aim[SteamworksGdLoader.ButtonCycleCounter(Or_Aim.size(), GlyphCycleTimer)]
-			$imgGlyphAimP2.texture = SteamworksGdLoader.GlyphBank[cur_tex]
+			var cur_tex = Or_Aim[SteamworksGlyphBank.ButtonCycleCounter(Or_Aim.size(), GlyphCycleTimer)]
+			$imgGlyphAimP2.texture = SteamworksGlyphBank.GlyphBank[cur_tex]
 		else: $imgGlyphAimP2.texture = DefaultGlyph
 
 		# Check Inputs and act
@@ -153,10 +153,10 @@ func _process(_delta):
 	for i in StCont:
 		pause_button_handles += Steam.getDigitalActionOrigins(i, SH_GameFirst, DH_Pause)
 	for i in pause_button_handles:
-		SteamworksGdLoader.LoadGlyphIntoBank(i)
+		SteamworksGlyphBank.LoadGlyphIntoBank(i)
 	if (pause_button_handles.size() > 0):
-		var cur_tex = pause_button_handles[SteamworksGdLoader.ButtonCycleCounter(pause_button_handles.size(), GlyphCycleTimer)]
-		$imgGlyphPause.texture = SteamworksGdLoader.GlyphBank[cur_tex]
+		var cur_tex = pause_button_handles[SteamworksGlyphBank.ButtonCycleCounter(pause_button_handles.size(), GlyphCycleTimer)]
+		$imgGlyphPause.texture = SteamworksGlyphBank.GlyphBank[cur_tex]
 	else:
 		$imgGlyphPause.texture = DefaultGlyph
 

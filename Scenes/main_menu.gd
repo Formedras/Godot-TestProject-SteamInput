@@ -12,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if !SteamworksGdLoader.isSteamInputRunning:
+	if !SteamworksInputLoader.isSteamInputRunning:
 		return
 
 	var StCont = Steam.getConnectedControllers()
@@ -36,25 +36,25 @@ func _process(_delta):
 		gamefirst_button_handles += Steam.getDigitalActionOrigins(i, menuset_handle, gamefirst_handle)
 		gamesecond_button_handles += Steam.getDigitalActionOrigins(i, menuset_handle, gamesecond_handle)
 	for i in confirm_button_handles:
-		SteamworksGdLoader.LoadGlyphIntoBank(i)
+		SteamworksGlyphBank.LoadGlyphIntoBank(i)
 	for i in gamefirst_button_handles:
-		SteamworksGdLoader.LoadGlyphIntoBank(i)
+		SteamworksGlyphBank.LoadGlyphIntoBank(i)
 	for i in gamesecond_button_handles:
-		SteamworksGdLoader.LoadGlyphIntoBank(i)
+		SteamworksGlyphBank.LoadGlyphIntoBank(i)
 		
 	if (confirm_button_handles.size() > 0):
-		var cur_tex = confirm_button_handles[SteamworksGdLoader.ButtonCycleCounter(confirm_button_handles.size(), GlyphCycleTimer)]
-		$imgGlyphConfirm.texture = SteamworksGdLoader.GlyphBank[cur_tex]
+		var cur_tex = confirm_button_handles[SteamworksGlyphBank.ButtonCycleCounter(confirm_button_handles.size(), GlyphCycleTimer)]
+		$imgGlyphConfirm.texture = SteamworksGlyphBank.GlyphBank[cur_tex]
 	else:
 		$imgGlyphConfirm.texture = DefaultGlyph
 	if (gamefirst_button_handles.size() > 0):
-		var cur_tex = gamefirst_button_handles[SteamworksGdLoader.ButtonCycleCounter(gamefirst_button_handles.size(), GlyphCycleTimer)]
-		$imgGlyphGameFirst.texture = SteamworksGdLoader.GlyphBank[cur_tex]
+		var cur_tex = gamefirst_button_handles[SteamworksGlyphBank.ButtonCycleCounter(gamefirst_button_handles.size(), GlyphCycleTimer)]
+		$imgGlyphGameFirst.texture = SteamworksGlyphBank.GlyphBank[cur_tex]
 	else:
 		$imgGlyphConfirm.texture = DefaultGlyph
 	if (gamesecond_button_handles.size() > 0):
-		var cur_tex = gamesecond_button_handles[SteamworksGdLoader.ButtonCycleCounter(gamesecond_button_handles.size(), GlyphCycleTimer)]
-		$imgGlyphGameSecond.texture = SteamworksGdLoader.GlyphBank[cur_tex]
+		var cur_tex = gamesecond_button_handles[SteamworksGlyphBank.ButtonCycleCounter(gamesecond_button_handles.size(), GlyphCycleTimer)]
+		$imgGlyphGameSecond.texture = SteamworksGlyphBank.GlyphBank[cur_tex]
 	else:
 		$imgGlyphConfirm.texture = DefaultGlyph
 

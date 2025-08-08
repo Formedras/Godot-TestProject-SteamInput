@@ -12,13 +12,15 @@ config_version=5
 
 config/name="Godot-TestProject-SteamInput"
 run/main_scene="res://Scenes/main_menu.tscn"
-config/features=PackedStringArray("4.2", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-SteamworksGdLoader="*res://SteamworksGDLoader.gd"
 SavedVariables="*res://saved_variables.gd"
+SteamworksGlyphBank="*res://SteamworksGlyphBank.gd"
+SteamworksGdLoader="*res://SteamworksGDLoader.gd"
+SteamworksInputLoader="*res://SteamworksInputLoader.gd"
 
 [display]
 
@@ -26,6 +28,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/size/borderless=true
+window/stretch/mode="viewport"
 
 [dotnet]
 

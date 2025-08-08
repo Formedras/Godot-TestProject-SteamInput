@@ -13,7 +13,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if !SteamworksGdLoader.isSteamInputRunning:
+	if !SteamworksInputLoader.isSteamInputRunning:
 		return
 		
 	var StCont = Steam.getConnectedControllers()
@@ -34,14 +34,14 @@ func _process(_delta):
 			var Or_Left = Steam.getDigitalActionOrigins(PlayerCont[i], SH_GameSecond, DH_Left)
 			var Or_Right = Steam.getDigitalActionOrigins(PlayerCont[i], SH_GameSecond, DH_Right)
 			for j in Or_Left + Or_Right:
-				SteamworksGdLoader.LoadGlyphIntoBank(j)
+				SteamworksGlyphBank.LoadGlyphIntoBank(j)
 			if (Or_Left.size() > 0):
-				var cur_tex = Or_Left[SteamworksGdLoader.ButtonCycleCounter(Or_Left.size(), GlyphCycleTimer)]
-				get_node("imgGlyphFlipperLeftP" + str(i+1)).texture = SteamworksGdLoader.GlyphBank[cur_tex]
+				var cur_tex = Or_Left[SteamworksGlyphBank.ButtonCycleCounter(Or_Left.size(), GlyphCycleTimer)]
+				get_node("imgGlyphFlipperLeftP" + str(i+1)).texture = SteamworksGlyphBank.GlyphBank[cur_tex]
 			else: get_node("imgGlyphFlipperLeftP" + str(i+1)).texture = DefaultGlyph
 			if (Or_Right.size() > 0):
-				var cur_tex = Or_Right[SteamworksGdLoader.ButtonCycleCounter(Or_Right.size(), GlyphCycleTimer)]
-				get_node("imgGlyphFlipperRightP" + str(i+1)).texture = SteamworksGdLoader.GlyphBank[cur_tex]
+				var cur_tex = Or_Right[SteamworksGlyphBank.ButtonCycleCounter(Or_Right.size(), GlyphCycleTimer)]
+				get_node("imgGlyphFlipperRightP" + str(i+1)).texture = SteamworksGlyphBank.GlyphBank[cur_tex]
 			else: get_node("imgGlyphFlipperRightP" + str(i+1)).texture = DefaultGlyph
 			# Take and process input
 			Steam.activateActionSet(PlayerCont[i], SH_GameSecond)
@@ -72,10 +72,10 @@ func _process(_delta):
 	for i in StCont:
 		pause_button_handles += Steam.getDigitalActionOrigins(i, SH_GameSecond, DH_Pause)
 	for i in pause_button_handles:
-		SteamworksGdLoader.LoadGlyphIntoBank(i)
+		SteamworksGlyphBank.LoadGlyphIntoBank(i)
 	if (pause_button_handles.size() > 0):
-		var cur_tex = pause_button_handles[SteamworksGdLoader.ButtonCycleCounter(pause_button_handles.size(), GlyphCycleTimer)]
-		$imgGlyphPause.texture = SteamworksGdLoader.GlyphBank[cur_tex]
+		var cur_tex = pause_button_handles[SteamworksGlyphBank.ButtonCycleCounter(pause_button_handles.size(), GlyphCycleTimer)]
+		$imgGlyphPause.texture = SteamworksGlyphBank.GlyphBank[cur_tex]
 	else:
 		$imgGlyphPause.texture = FormGlyph
 	# Check if Pause is pressed, switch to Main Menu if true

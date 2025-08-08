@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bywneg8f67h87"]
 
-[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_qca18"]
+[ext_resource type="Script" uid="uid://s8d4vhtfa1h4" path="res://Scenes/main_menu.gd" id="1_qca18"]
 [ext_resource type="Texture2D" uid="uid://dnrdstucjhyd5" path="res://icon.svg" id="1_wmsvl"]
 [ext_resource type="Texture2D" uid="uid://u2aypu51x6mc" path="res://formedras.svg" id="2_xvfs4"]
 
